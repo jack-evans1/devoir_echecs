@@ -1,0 +1,15 @@
+Commentaire :
+
+LES ECHECS : UN ECHEC ?
+
+Bonjour Monsieur. Vous le remarquerez surement assez rapidement, mais mon code fonctionne tres mal, et par tres mal, je veux dire qu'il ne fonctionne pas. Je vais tout de meme vous présenter ce que j'ai fait car je pense que c'etait bien parti en vrai.
+
+J'ai préféré faire un jeu d'echecs dans la console (du moins pour commencer) pour ne pas meler les difficultés liées au jeu et celles a l'affichage. C'est possible grace a la fonction void initBoard() qui dispose des pieces (0 ou 1 pour des cases et un nombre entre 2 et 14 pour les pieces) dans un array de taille 8*8 nommé board. Ainsi seul le plateau existe, les pieces sont contenues dans la variable board, qui est affiché a chaque tour (dans le sens qui correspond au tour).
+
+Le joueur rentre ensuite le mouvement a jouer dans 4 std::cin qui correspondent aux coordonnées de départ et d'arrivée.
+
+Ensuite, ca devient technique. Une fonction bool testMove() se charge de valider la légalité du mouvemement. Pour cela, elle identifie le type de pion, puis fait appel a une sous-classe de la classe move, qui contient les fonctions bool treason() et bool legalMove() capables de verifier qu'on ne prend pas son propre pion (ou qu'on ne bouge pas) et que la piece en question a le droit de faire le mouvement demandé.
+
+Je voulais rajouter la mise en echec mais j'ai eu des soucis en voulant creer une copie du plateau, et par manque de temps, j'ai lachement abandonné.
+
+Le programme quitte (avec un exit code aberrant) quand on essaye de rentrer le mouvement, donc j'etais bien embeté parce que a priori il se passe rien a ce moment la, donc meme en debuggant je trouvais pas le probleme. De toute facon, je savais plus comment faire des variables qui se detruisent apres usage donc mon code est pas du tout pratique, il y a genre 1000 variables qui existent a la fois totalement inutiles qui encombrent la memoire.
